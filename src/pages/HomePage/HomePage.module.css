@@ -1,0 +1,100 @@
+.page {
+    --animationOffsetTop: 10px;
+    --exploreButtonSize: 274px;
+    --exploreButtonBorderWidth: 90px;
+    margin-top: 140px;
+    margin-bottom: calc(var(--exploreButtonBorderWidth) + var(--animationOffsetTop));
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    /* padding: 0 60px; */
+}
+
+.infoBlock {
+    flex: 1 1;
+    padding-right: var(--exploreButtonBorderWidth);
+}
+
+.exploreButtonBlock {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    flex: 1 0 calc(var(--exploreButtonSize) + 2 * var(--exploreButtonBorderWidth));
+    height: calc(var(--exploreButtonSize) + var(--exploreButtonBorderWidth));
+}
+
+.exploreButton {
+    position: absolute;
+    background-color: white;
+    background-clip: padding-box;
+    border-radius: 50%;
+    border: var(--exploreButtonBorderWidth) solid transparent;
+    margin-right: calc(var(--exploreButtonBorderWidth) * -1);
+    width: var(--exploreButtonSize);
+    height: var(--exploreButtonSize);
+    line-height: var(--exploreButtonSize);
+    text-align: center;
+    letter-spacing: 2px;
+    font-family: Bellefair, sans-serif;
+    font-size: 32px;
+    color: #0b0d17;
+    cursor: pointer;
+    box-sizing: content-box;
+    animation: bouncing 1.5s infinite;
+}
+
+.exploreButton:hover {
+    border-color: rgba(255, 255, 255, 0.1);
+    transition: border-color 0.1s ease-in-out;
+}
+
+@keyframes bouncing {
+    0% {
+        top: 0;
+    } 
+    50% {
+        top: var(--animationOffsetTop);
+    }  
+    100% {
+        top: 0;
+    } 
+}
+
+@media screen and (max-width: 768px) {
+    .page {
+        --exploreButtonSize: 242px;
+        margin-top: 70px;
+    }
+
+    .content {
+        justify-content: center;
+    }
+
+    .infoBlock {
+        text-align: center;
+        padding-right: 0;
+    }
+
+    .exploreButtonBlock {
+        justify-content: center;
+    }
+
+    .exploreButton {
+        margin-right: 0;
+    }
+}
+
+
+@media screen and (max-width: 425px) {
+    .page {
+        --exploreButtonSize: 150px;
+        margin-top: 50px;
+    }
+
+    .exploreButton {
+        font-size: 20px;
+        letter-spacing: 1.25px;
+    }
+}
