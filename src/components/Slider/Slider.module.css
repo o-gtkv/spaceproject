@@ -1,0 +1,62 @@
+.wrapper {
+
+}
+
+.slider {
+    /* border: 1px solid green; */
+}
+
+.slide,
+.slideActive {
+    /* position: absolute; */
+    /* bottom: 0; */
+}
+
+.slide {
+    display: none;
+    align-items: flex-end;
+}
+
+.slideActive {
+    display: flex;
+    animation: fade 1s ease-in-out;
+}
+
+.bullet,
+.bulletActive {
+    padding: 7.5px 7.5px;
+    background: white;
+    border-radius: 50%;
+    font-size: 0;
+}
+
+.bullet {
+    opacity: 0.17;
+}
+
+.bullet:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.bullet + .bullet {
+    margin-left: 25px;
+}
+
+.bulletActive {
+    opacity: 1;
+}
+
+.paginationBar {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

@@ -1,4 +1,4 @@
-import React  from 'react'
+import React, { Children, cloneElement }  from 'react'
 
 import MobileMenuButton from '../MobileMenuButton/MobileMenuButton'
 
@@ -11,7 +11,16 @@ function NavigationBar({isVisible, children, toggleVisibility}) {
             <div className={styles.mobileMenuButtonWrapper}>
                 <MobileMenuButton className={styles.mobileMenuButton} action={toggleVisibility} icon={iconClose} />
             </div>
-            {children}
+            {
+                Children.map(children, (tab, index) => {
+                    return cloneElement(tab, {
+                        key: index,
+                        onClick: toggleVisibility
+                    })
+                })
+            }
+
+            {/* {children} */}
         </nav>
     )
 }

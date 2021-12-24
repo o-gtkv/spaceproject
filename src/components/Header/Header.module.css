@@ -5,8 +5,6 @@
 }
 
 .hr {
-    border-top: 2px solid #f2f2f2;
-    opacity: 0.3;
     flex-grow: 1;
     margin-right: -30px;
     z-index: 10;
@@ -19,7 +17,7 @@
     max-width: var(--logoMaxWidth);
 }
 
-@media screen and (max-width: 768px) {     
+@media screen and (max-width: 1200px) {     
     .header {
         margin-top: 0;
     }
@@ -29,7 +27,7 @@
     }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 560px) {
     .header {
         margin-top: var(--headerMarginTop);
         max-height: var(--headerMobileMaxHeight);

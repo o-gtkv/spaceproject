@@ -1,0 +1,13 @@
+.tabBar {
+    display: flex;
+    column-gap: 40px;
+    flex-basis: 100%;    
+}
+
+@media screen and (max-width: 1300px) {
+    .tabBar {
+        margin: 0 auto;
+        column-gap: 28px;
+        width: fit-content;
+    }
+}

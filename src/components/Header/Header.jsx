@@ -9,10 +9,10 @@ import logo from '../../assets/images/shared/logo.svg'
 import iconHamburger from '../../assets/images/shared/icon-hamburger.svg'
 
 function Header() {
-    const [isNavBarVisible, setVisibility] = useState(!window.matchMedia('(max-width: 425px)').matches)
+    const [isNavBarVisible, setVisibility] = useState(!window.matchMedia('(max-width: 560px)').matches)
 
     const handleResize = () => {
-        setVisibility(!window.matchMedia('(max-width: 425px)').matches)        
+        setVisibility(!window.matchMedia('(max-width: 560px)').matches)        
     }
 
     const toggleVisibility = () => {
@@ -27,7 +27,7 @@ function Header() {
     return (
         <header className={styles.header}>
             <img className={styles.logo} src={logo} alt="logo" />
-            <div className={styles.hr} />
+            <hr className={`${styles.hr}`} />
             <NavigationBar isVisible={isNavBarVisible} toggleVisibility={toggleVisibility}>
                 <NavigationLink to="/" text="home" />
                 <NavigationLink to="/destination" text="destination" />

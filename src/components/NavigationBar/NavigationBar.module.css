@@ -4,7 +4,7 @@
     justify-content: space-between;
     padding: 0 var(--containerMargin) 0 96px;
     counter-reset: itemNum -1;
-    background: rgba(50, 50, 50, 0.7);
+    background-color: rgba(50, 50, 50, 0.7);
 }
 
 @supports (backdrop-filter: blur(81.5px)) {
@@ -19,19 +19,16 @@
     content: '0'counter(itemNum);
     padding-right: 1rem;
     font-weight: 700;
+    font-family: "Barlow condensed", sans-serif;
+    letter-spacing: 2.7px;
 }
 
 @media screen and (max-width: 1200px) {
     .navigationBar {
-        padding: 0;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .navigationBar {
         flex: 0 1 60%;
-        margin-left: auto;
         justify-content: space-evenly;
+        margin-left: auto;
+        padding: 0;
     }
 
     .navigationBar > *::before {
@@ -43,7 +40,7 @@
     display: none;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 560px) {
     .mobileMenuButtonWrapper {
         flex-basis: var(--headerMobileMaxHeight);
         display: flex;

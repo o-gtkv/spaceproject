@@ -18,7 +18,7 @@ function TechnologyPage() {
 
     return (
         <div>
-            <h1 style={{color: "red"}}>Technology</h1>
+            <h5 className="page-title heading-5 upcase">space launch 101</h5>
         </div>
     )
 }

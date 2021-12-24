@@ -9,7 +9,6 @@
 .content {
     display: flex;
     flex-wrap: wrap;
-    /* padding: 0 60px; */
 }
 
 .infoBlock {
@@ -21,8 +20,7 @@
     position: relative;
     display: flex;
     justify-content: flex-end;
-    flex: 1 0 calc(var(--exploreButtonSize) + 2 * var(--exploreButtonBorderWidth));
-    height: calc(var(--exploreButtonSize) + var(--exploreButtonBorderWidth));
+    flex-basis: calc(var(--exploreButtonSize) + 2 * var(--exploreButtonBorderWidth));
 }
 
 .exploreButton {
@@ -38,7 +36,7 @@
     text-align: center;
     letter-spacing: 2px;
     font-family: Bellefair, sans-serif;
-    font-size: 32px;
+    font-size: 2rem;
     color: #0b0d17;
     cursor: pointer;
     box-sizing: content-box;
@@ -62,7 +60,7 @@
     } 
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1350px) {
     .page {
         --exploreButtonSize: 242px;
         margin-top: 70px;
@@ -70,6 +68,11 @@
 
     .content {
         justify-content: center;
+    }
+
+    .infoBlock,
+    .exploreButtonBlock {
+        flex-basis: 100%;
     }
 
     .infoBlock {
@@ -87,14 +90,14 @@
 }
 
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 560px) {
     .page {
         --exploreButtonSize: 150px;
         margin-top: 50px;
     }
 
     .exploreButton {
-        font-size: 20px;
+        font-size: 1.25rem;
         letter-spacing: 1.25px;
     }
 }
