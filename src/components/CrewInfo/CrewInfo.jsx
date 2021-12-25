@@ -30,7 +30,7 @@ function CrewInfo() {
     const [trackedSlideIndex, setTrackedSlideIndex] = useState(0)
     const [slideHeightMax, setSlideHeightMax] = useState(0)
 
-    const load = () => {
+    const justifySlidesHeight = () => {
         let maxHeight = getElementHeight(slideRefs[0].current)
         for (let i = 1; i < crew.length; ++i)
             maxHeight = Math.max(maxHeight, getElementHeight(slideRefs[i].current))
@@ -41,15 +41,32 @@ function CrewInfo() {
     useMedia('(min-width: 561px)', (matches) => {
         if (!matches || slideHeightMax)
             return
-        load()
+        justifySlidesHeight()
     })
 
+    const determineMaxHeightImage = (() => {
+        let maxHeight = 0
+        return (el) => maxHeight = Math.max(maxHeight, getElementHeight(el))
+    })()
+
+    const handleImageLoad = (() => {
+        let count = 0
+        return (e) => {
+            ++count
+            if (count === crew.length)
+                setSlideHeightMax(determineMaxHeightImage(e.target))
+            else
+                determineMaxHeightImage(e.target)
+        }
+    })()
+
     useEffect(() => {
+        console.log('asd');
         if (mobileMql.matches || slideHeightMax)
             return
-        window.addEventListener('load', load)
-        return () => window.removeEventListener('load', load)
-    }, [])
+        imgRefs.forEach(img => img.current.addEventListener('load', handleImageLoad))
+        return () => imgRefs.forEach(img => img.current.removeEventListener('load', handleImageLoad))
+    }, [imgRefs])
 
     return (
         <div className={styles.content}>
