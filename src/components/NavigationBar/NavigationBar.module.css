@@ -3,7 +3,7 @@
     display: flex;
     justify-content: space-between;
     padding: 0 var(--containerMargin) 0 96px;
-    counter-reset: itemNum -1;
+    /* counter-reset: itemNum -1; */
     background-color: rgba(50, 50, 50, 0.7);
 }
 
@@ -15,8 +15,8 @@
 }
 
 .navigationBar > *:not(:first-child)::before {
-    counter-increment: itemNum;
-    content: '0'counter(itemNum);
+    /* counter-increment: itemNum; */
+    /* content: '0'counter(itemNum); */
     padding-right: 1rem;
     font-weight: 700;
     font-family: "Barlow condensed", sans-serif;

@@ -40,6 +40,7 @@
     color: #0b0d17;
     cursor: pointer;
     box-sizing: content-box;
+    text-decoration: none;
     animation: bouncing 1.5s infinite;
 }
 

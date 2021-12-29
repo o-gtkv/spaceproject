@@ -48,7 +48,7 @@ class Slider extends React.Component {
         }
     }
 
-    cloneSlides(tmp) {
+    cloneSlides = (tmp) => {
         const activeIndex = this.props.activeIndex ?? 0
         return [
             ...tmp.slice(0, activeIndex)
@@ -68,7 +68,7 @@ class Slider extends React.Component {
         ]
     }
 
-    componentDidUpdate(prevProps) {
+    componentDidUpdate = (prevProps) => {
         if (!isEqual(prevProps, this.props)) {
             const tmp = Children.toArray(this.props.children)
             const activeIndex = this.props.activeIndex ?? 0
@@ -85,16 +85,16 @@ class Slider extends React.Component {
         this.setSlide(this.props.activeIndex)
     }
 
-    componentDidMount() {
+    componentDidMount = () => {
         this.autoplay = this.props.autoplay ? new Autoplay(this, this.props.autoplay.delay) : null
         this.autoplay?.start()
     }
 
-    componentWillUnmount() {
+    componentWillUnmount = () => {
         this.autoplay?.stop()
     }
 
-    setSlide(index) {
+    setSlide = (index) => {
         const { activeIndex, slides } = this.state
         const tmp = slides
         tmp[activeIndex] = cloneElement(slides[activeIndex], {
@@ -114,11 +114,11 @@ class Slider extends React.Component {
             this.props.onSlideChange(index)
     }
 
-    nextSlide() {
+    nextSlide = () => {
         this.setSlide((this.state.activeIndex + 1) % this.state.slides.length)
     }
 
-    render() {
+    render = () => {
         return (
             <div className={`${styles.wrapper ?? ''} ${this.props.className ?? ''}`}>
                 <div

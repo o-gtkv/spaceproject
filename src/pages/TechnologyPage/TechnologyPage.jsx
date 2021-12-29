@@ -23,9 +23,7 @@ function TechnologyPage() {
             <div className="container">
                 <h5 className="page-title heading-5 upcase">space launch 101</h5>
             </div>
-            <div className="container-2">
-                <TechnologyInfo />
-            </div>
+            <TechnologyInfo />
         </div >
     )
 }

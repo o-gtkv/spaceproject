@@ -1,8 +1,3 @@
-/* .container {
-    margin-left: var(--containerTabletMargin);
-    margin-right: var(--containerTabletMargin);
-} */
-
 .content {
     counter-reset: number;
     display: flex;
@@ -13,6 +8,7 @@
 
 .title{
     margin-bottom: 0;
+    margin-top: 0;
 }
 
 .techName {
@@ -24,7 +20,7 @@
     flex-direction: row-reverse;
     column-gap: 80px;
     margin-top: 50px;
-    /* margin-left: var(--containerMargin); */
+    margin-left: var(--containerMargin);
     flex: 1 1;
 }
 
@@ -35,15 +31,14 @@
 .imageWrapper {
 }
 
-.image {
-}
-
 .controlledSliderSlide {
 }
 
 .paginationBar {
     flex-direction: column;
     row-gap: 30px;
+    margin-top: 0;
+    margin-bottom: auto;
 }
 
 .bullet,
@@ -104,10 +99,10 @@
 
     .mainSlider {
         flex-wrap: wrap-reverse;
-        /* margin-left: var(--containerMargin); */
-        /* margin-right: var(--containerMargin); */
+        margin-top: 0;
+        margin-left: var(--containerMargin);
+        margin-right: var(--containerMargin);
     }
-
 
     .mainSliderSlide {
         text-align: center;        
@@ -126,10 +121,35 @@
         flex: 1 1;
         flex-direction: row;
         justify-content: center;
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+
+    .image {
+        width: 100%;
+        height: auto;
     }
 }
 
 @media screen and (max-width: 560px) {
+    .bullet,
+    .bulletActive {
+        padding: 20px 20px;
+    }
 
+    .bullet::before,
+    .bulletActive::before {
+        font-size: 1rem;
+    }
+
+    .paginationBar {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    .mainSlider {
+        margin-left: 30px;
+        margin-right: 30px;
+    }
 }
     
