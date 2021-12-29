@@ -108,3 +108,10 @@
         margin-bottom: 40px;
     }
 }
+
+
+@media screen and (min-height: 900px) {
+    .imageWrapper {
+        border-bottom: 1px solid #383B4B;
+    }
+}

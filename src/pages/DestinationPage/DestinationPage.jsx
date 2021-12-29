@@ -31,33 +31,35 @@ function DestinationPage() {
     }
 
     return (
-        <div className={`${styles.page}`}>
-            <h5 className="page-title heading-5 upcase">pick your distanation</h5>
-            <div className={`${styles.content}`}>
-                <div className={`${styles.imageBlock}`}>
-                    <img src={image} alt="destanation" />
-                </div>
-                <div className={styles.tabBlock}>
-                    <TabContext tabClickExternalAction={changeImageTo}>
-                        <TabBar className={styles.tabBar}>
-                            <Tab className={styles.tab} label="moon" value={0} />
-                            <Tab className={styles.tab} label="mars" value={1} />
-                            <Tab className={styles.tab} label="europe" value={2} />
-                            <Tab className={styles.tab} label="titan" value={3} />
-                        </TabBar>
-                        <TabContent value={0}>
-                            <DestinationInfo {...destination[0]} />
-                        </TabContent>
-                        <TabContent value={1}>
-                            <DestinationInfo {...destination[1]} />
-                        </TabContent>
-                        <TabContent value={2}>
-                            <DestinationInfo {...destination[2]} />
-                        </TabContent>
-                        <TabContent value={3}>
-                            <DestinationInfo {...destination[3]} />
-                        </TabContent>
-                    </TabContext>
+        <div className="container">
+            <div className={`${styles.page}`}>
+                <h5 className="page-title heading-5 upcase">pick your distanation</h5>
+                <div className={`${styles.content}`}>
+                    <div className={`${styles.imageBlock}`}>
+                        <img src={image} alt="destanation" />
+                    </div>
+                    <div className={styles.tabBlock}>
+                        <TabContext tabClickExternalAction={changeImageTo}>
+                            <TabBar className={styles.tabBar}>
+                                <Tab className={styles.tab} label="moon" value={0} />
+                                <Tab className={styles.tab} label="mars" value={1} />
+                                <Tab className={styles.tab} label="europe" value={2} />
+                                <Tab className={styles.tab} label="titan" value={3} />
+                            </TabBar>
+                            <TabContent value={0}>
+                                <DestinationInfo {...destination[0]} />
+                            </TabContent>
+                            <TabContent value={1}>
+                                <DestinationInfo {...destination[1]} />
+                            </TabContent>
+                            <TabContent value={2}>
+                                <DestinationInfo {...destination[2]} />
+                            </TabContent>
+                            <TabContent value={3}>
+                                <DestinationInfo {...destination[3]} />
+                            </TabContent>
+                        </TabContext>
+                    </div>
                 </div>
             </div>
         </div>

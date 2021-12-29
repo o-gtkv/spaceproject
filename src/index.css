@@ -58,6 +58,10 @@ hr {
     margin-right: var(--containerMargin);
 }
 
+.container-2 {
+    margin-left: var(--containerMargin);
+}
+
 .upcase {
     text-transform: uppercase;
 }
@@ -80,6 +84,15 @@ hr {
 
 .heading-5 {
     font-size: 1.75rem;
+}
+
+.heading-6 {
+    font-size: 1rem;
+    letter-spacing: 2.7px;
+}
+
+.heading-5,
+.heading-6 {
     font-family: "Barlow Condensed", sans-serif;
 }
 
@@ -123,14 +136,16 @@ hr {
     margin-top: 70px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1300px) {
     .container {
         margin-left: var(--containerTabletMargin);
         margin-right: var(--containerTabletMargin);
     }
-}
 
-@media screen and (max-width: 1300px) { /* prev 1200 */
+    .container-2 { 
+        margin-left: 0;
+    }
+
     .heading-2 {
         font-size: 5rem;
     }

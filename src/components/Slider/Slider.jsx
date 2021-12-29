@@ -1,4 +1,6 @@
 import React, { useEffect, useState, Children, cloneElement } from 'react'
+import { isEqual } from '../../utils/utils'
+// import lodash from 'lodash'
 
 import styles from './Slider.module.css'
 
@@ -39,46 +41,60 @@ class Slider extends React.Component {
         super(props)
         const tmp = Children.toArray(this.props.children)
         const activeIndex = this.props.activeIndex ?? 0
-
         this.slideClassName = tmp.map(slide => slide.props.className)
         this.state = {
             activeIndex,
-            slides: [
-                ...tmp.slice(0, activeIndex)
-                    .map((slide, i) => cloneElement(slide, {
-                        className: `${styles.slide} ${this.slideClassName[i]}`,
-                        onClick: this.props.changeSlideOnClick ? this.nextSlide : null
-                    })),
-                cloneElement(tmp[activeIndex], {
-                    className: `${styles.slideActive} ${this.slideClassName[activeIndex]}`,
-                    onClick: this.props.changeSlideOnClick ? this.nextSlide : null
-                }),
-                ...tmp.slice(activeIndex + 1, tmp.length)
-                    .map((slide, i) => cloneElement(slide, {
-                        className: `${styles.slide} ${this.slideClassName[i]}`,
-                        onClick: this.props.changeSlideOnClick ? this.nextSlide : null
-                    }))
-            ]
+            slides: this.cloneSlides(tmp)
         }
     }
 
-    componentDidUpdate = () => {
+    cloneSlides(tmp) {
+        const activeIndex = this.props.activeIndex ?? 0
+        return [
+            ...tmp.slice(0, activeIndex)
+                .map((slide, i) => cloneElement(slide, {
+                    className: `${styles.slide} ${this.slideClassName[i]}`,
+                    onClick: this.props.changeSlideOnClick ? this.nextSlide : null
+                })),
+            cloneElement(tmp[activeIndex], {
+                className: `${styles.slideActive} ${this.slideClassName[activeIndex]}`,
+                onClick: this.props.changeSlideOnClick ? this.nextSlide : null
+            }),
+            ...tmp.slice(activeIndex + 1, tmp.length)
+                .map((slide, i) => cloneElement(slide, {
+                    className: `${styles.slide} ${this.slideClassName[i]}`,
+                    onClick: this.props.changeSlideOnClick ? this.nextSlide : null
+                }))
+        ]
+    }
+
+    componentDidUpdate(prevProps) {
+        if (!isEqual(prevProps, this.props)) {
+            const tmp = Children.toArray(this.props.children)
+            const activeIndex = this.props.activeIndex ?? 0
+            this.slideClassName = tmp.map(slide => slide.props.className)
+            this.setState({
+                activeIndex,
+                slides: this.cloneSlides(tmp)
+            })
+        }
+
         if (this.props.activeIndex === undefined ||
             this.props.activeIndex === this.state.activeIndex)
             return
         this.setSlide(this.props.activeIndex)
     }
 
-    componentDidMount = () => {
+    componentDidMount() {
         this.autoplay = this.props.autoplay ? new Autoplay(this, this.props.autoplay.delay) : null
         this.autoplay?.start()
     }
 
-    componentWillUnmount = () => {
+    componentWillUnmount() {
         this.autoplay?.stop()
     }
 
-    setSlide = (index) => {
+    setSlide(index) {
         const { activeIndex, slides } = this.state
         const tmp = slides
         tmp[activeIndex] = cloneElement(slides[activeIndex], {
@@ -98,12 +114,13 @@ class Slider extends React.Component {
             this.props.onSlideChange(index)
     }
 
-    nextSlide = () => {
+    nextSlide() {
         this.setSlide((this.state.activeIndex + 1) % this.state.slides.length)
     }
-    render = () => {
+
+    render() {
         return (
-            <div className={`${styles.wrapper} ${this.props.className ?? ''}`}>
+            <div className={`${styles.wrapper ?? ''} ${this.props.className ?? ''}`}>
                 <div
                     className={styles.slider}
                     onMouseLeave={this.autoplay?.start}

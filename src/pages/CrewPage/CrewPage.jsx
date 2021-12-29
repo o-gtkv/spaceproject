@@ -19,9 +19,11 @@ function CrewPage() {
     })
 
     return (
-        <div className={styles.page ?? ''}>
-            <h5 className="page-title heading-5 upcase">meet your crew</h5>
-            <CrewInfo />
+        <div className="container">
+            <div className={styles.page ?? ''}>
+                <h5 className="page-title heading-5 upcase">meet your crew</h5>
+                <CrewInfo />
+            </div>
         </div>
     )
 }

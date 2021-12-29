@@ -1,7 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react'
 import { useMedia } from '../../utils/utils'
 import Slider from '../Slider/Slider'
-// import { Context } from '../../components/Main/Main'
 
 import styles from './CrewInfo.module.css'
 import { crew } from '../../data/crew'
@@ -61,7 +60,6 @@ function CrewInfo() {
     })()
 
     useEffect(() => {
-        console.log('asd');
         if (mobileMql.matches || slideHeightMax)
             return
         imgRefs.forEach(img => img.current.addEventListener('load', handleImageLoad))
@@ -77,12 +75,12 @@ function CrewInfo() {
                     bulletClass: styles.bullet,
                     bulletActiveClass: styles.bulletActive,
                 }}
-                // autoplay={{ delay: 2000 }}
+                autoplay={{ delay: 3000 }}
                 onSlideChange={setTrackedSlideIndex}
             >
                 {
                     crew.map((item, index) =>
-                        <div key={index} className={styles.pictureSlider}>
+                        <div key={index}>
                             <Info position={item.position} name={item.name} about={item.about} image={item.image} />
                         </div>
                     )

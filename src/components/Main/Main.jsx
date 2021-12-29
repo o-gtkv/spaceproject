@@ -9,29 +9,24 @@ import TechnologyPage from '../../pages/TechnologyPage/TechnologyPage'
 export const Context = React.createContext(null)
 
 function Main() {
-    // const slideHeightMaxStateTuple = useState(0)
     return (
-        <div className="container">
-            <Routes>
-                <Route path="/" element={
-                    <HomePage />
-                } />
-                <Route path="/destination" element={
-                    <DestinationPage />
-                } />
-                <Route path="/technology" element={
-                    <TechnologyPage />
-                } />
-                <Route path="/crew" element={
-                    // <Context.Provider value={slideHeightMaxStateTuple}>
-                    <CrewPage />
-                    // </Context.Provider>
-                } />
-                <Route path="/*" element={
-                    <Navigate to="/" />
-                } />
-            </Routes>
-        </div>
+        <Routes>
+            <Route path="/" element={
+                <HomePage />
+            } />
+            <Route path="/destination" element={
+                <DestinationPage />
+            } />
+            <Route path="/technology" element={
+                <TechnologyPage />
+            } />
+            <Route path="/crew" element={
+                <CrewPage />
+            } />
+            <Route path="/*" element={
+                <Navigate to="/" />
+            } />
+        </Routes>
     )
 }
 

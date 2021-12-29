@@ -1,17 +1,3 @@
-.wrapper {
-
-}
-
-.slider {
-    /* border: 1px solid green; */
-}
-
-.slide,
-.slideActive {
-    /* position: absolute; */
-    /* bottom: 0; */
-}
-
 .slide {
     display: none;
     align-items: flex-end;
@@ -39,15 +25,18 @@
     cursor: pointer;
 }
 
-.bullet + .bullet {
+/* .bullet + .bullet {
     margin-left: 25px;
-}
+} */
 
 .bulletActive {
     opacity: 1;
 }
 
 .paginationBar {
+    display: flex;
+    justify-content: center;
+    column-gap: 25px;
     margin-top: 15px;
     margin-bottom: 15px;
 }

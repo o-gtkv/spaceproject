@@ -1,0 +1,135 @@
+/* .container {
+    margin-left: var(--containerTabletMargin);
+    margin-right: var(--containerTabletMargin);
+} */
+
+.content {
+    counter-reset: number;
+    display: flex;
+    column-gap: 160px;
+    flex-wrap: wrap-reverse;
+    margin-bottom: 90px;
+}
+
+.title{
+    margin-bottom: 0;
+}
+
+.techName {
+    margin-top: 15px;
+}
+
+.mainSlider {
+    display: flex;
+    flex-direction: row-reverse;
+    column-gap: 80px;
+    margin-top: 50px;
+    /* margin-left: var(--containerMargin); */
+    flex: 1 1;
+}
+
+.controlledSlider {
+    flex: 0 1;    
+}
+
+.imageWrapper {
+}
+
+.image {
+}
+
+.controlledSliderSlide {
+}
+
+.paginationBar {
+    flex-direction: column;
+    row-gap: 30px;
+}
+
+.bullet,
+.bulletActive {
+    position: relative;
+    padding: 40px 40px;
+    opacity: 1;
+}
+
+.bullet {
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background-color: transparent;
+}
+
+.bullet:hover {
+    border: 1px solid rgb(255, 255, 255);
+}
+
+.bullet:hover,
+.bulletActive:hover {
+    opacity: 1;
+}
+
+.bulletActive {
+    background-color: white;
+}
+
+.bullet::before,
+.bulletActive::before {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-family: Bellefair, sans-serif;
+    font-size: 2rem;
+}
+
+.bullet::before {
+    counter-increment: number;
+    content: counter(number);
+    color: white;
+}
+
+.bulletActive::before {
+    color: black;
+}
+
+@media screen and (max-width: 1300px) {
+    .bullet,
+    .bulletActive {
+        padding: 30px 30px;
+    }
+
+    .bullet::before,
+    .bulletActive::before {
+        font-size: 1.5rem;   
+    }
+
+    .mainSlider {
+        flex-wrap: wrap-reverse;
+        /* margin-left: var(--containerMargin); */
+        /* margin-right: var(--containerMargin); */
+    }
+
+
+    .mainSliderSlide {
+        text-align: center;        
+    }
+
+    .controlledSliderSlide {
+        justify-content: center;
+    }
+
+    .mainSlider,
+    .controlledSlider {
+        flex-basis: 100%;
+    }
+
+    .paginationBar {
+        flex: 1 1;
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 560px) {
+
+}
+    
