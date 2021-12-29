@@ -3,7 +3,7 @@
     text-decoration: none;
     color: white;
     font-family: "Barlow condensed", sans-serif;
-    font-size: 16px;
+    font-size: 1rem;
     letter-spacing: 2.7px;
 }
 
@@ -20,9 +20,17 @@
     border-bottom: 2px solid white;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (min-width: 1301px) {
+    .link::before {                        
+        content: '0'attr(datalinknumber);
+        padding-right: 1rem;
+        font-weight: 700;
+    }
+}
+
+@media screen and (max-width: 1300px) {
     .link {
-        font-size: 14px;
+        font-size: 0.875rem;
     }
 }
 

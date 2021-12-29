@@ -14,6 +14,7 @@ import tabletBgImg from '../../assets/images/destination/background-destination-
 import desktopBgImg from '../../assets/images/destination/background-destination-desktop.jpg'
 
 import { destination } from '../../data/destination'
+import { useLocation } from 'react-router'
 
 const setBg = () => setBodyBackgroundImage(desktopBgImg, tabletBgImg, mobileBgImg)
 
@@ -30,10 +31,12 @@ function DestinationPage() {
         setImage(destination[index].image)
     }
 
+    const pageNumber = useLocation().state
+
     return (
         <div className="container">
             <div className={`${styles.page}`}>
-                <h5 className="page-title heading-5 upcase">pick your distanation</h5>
+                <h5 className="page-title heading-5 upcase" datapagenumber={pageNumber}>pick your distanation</h5>
                 <div className={`${styles.content}`}>
                     <div className={`${styles.imageBlock}`}>
                         <img src={image} alt="destanation" />

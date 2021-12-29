@@ -12,7 +12,7 @@ function Header() {
     const [isNavBarVisible, setVisibility] = useState(!window.matchMedia('(max-width: 560px)').matches)
 
     const handleResize = () => {
-        setVisibility(!window.matchMedia('(max-width: 560px)').matches)        
+        setVisibility(!window.matchMedia('(max-width: 560px)').matches)
     }
 
     const toggleVisibility = () => {
@@ -21,7 +21,7 @@ function Header() {
 
     useEffect(() => {
         window.addEventListener('resize', handleResize)
-        return () => window.removeEventListener('resize', handleResize)        
+        return () => window.removeEventListener('resize', handleResize)
     })
 
     return (
@@ -29,10 +29,10 @@ function Header() {
             <img className={styles.logo} src={logo} alt="logo" />
             <hr className={`${styles.hr}`} />
             <NavigationBar isVisible={isNavBarVisible} toggleVisibility={toggleVisibility}>
-                <NavigationLink to="/" text="home" />
-                <NavigationLink to="/destination" text="destination" />
-                <NavigationLink to="/crew" text="crew" />
-                <NavigationLink to="/technology" text="technology" />
+                <NavigationLink to="/" text="home" number={1} />
+                <NavigationLink to="/destination" text="destination" number={2} />
+                <NavigationLink to="/crew" text="crew" number={3} />
+                <NavigationLink to="/technology" text="technology" number={4} />
             </NavigationBar>
             <MobileMenuButton className={styles.mobileMenuButton} action={toggleVisibility} icon={iconHamburger} isHidden={isNavBarVisible} />
         </header>

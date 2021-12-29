@@ -13,12 +13,18 @@
 }
 
 @font-face {
+    font-family: "Barlow Condensed";
+    src: url("./assets/fonts/BarlowCondensed/BarlowCondensed-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
     font-family: "Bellefair";
     src: url("./assets/fonts/Bellefair/Bellefair-Regular.ttf") format("truetype");
     font-weight: 400;
     font-style: normal;
 }
-
 
 :root {
     --regularTextColor: #d0d6f9; 
@@ -130,6 +136,13 @@ hr {
 
 .page-title {
     margin-top: 70px;
+}
+
+.page-title::before {
+    content: '0'attr(datapagenumber);
+    opacity: 0.25;
+    font-weight: 700;
+    margin-right: 1rem;
 }
 
 @media screen and (max-width: 1300px) {

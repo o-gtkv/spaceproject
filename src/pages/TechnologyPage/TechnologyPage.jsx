@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 
 import TechnologyInfo from '../../components/TechnologyInfo/TechnologyInfo'
 
@@ -18,10 +19,12 @@ function TechnologyPage() {
         return () => window.removeEventListener('resize', setBg)
     })
 
+    const pageNumber = useLocation().state
+
     return (
         <div className={styles.page ?? ''}>
             <div className="container">
-                <h5 className="page-title heading-5 upcase">space launch 101</h5>
+                <h5 className="page-title heading-5 upcase" datapagenumber={pageNumber}>space launch 101</h5>
             </div>
             <TechnologyInfo />
         </div >

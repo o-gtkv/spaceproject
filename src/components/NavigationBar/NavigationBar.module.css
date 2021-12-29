@@ -14,25 +14,13 @@
     }
 }
 
-.navigationBar > *:not(:first-child)::before {
-    /* counter-increment: itemNum; */
-    /* content: '0'counter(itemNum); */
-    padding-right: 1rem;
-    font-weight: 700;
-    font-family: "Barlow condensed", sans-serif;
-    letter-spacing: 2.7px;
-}
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1300px) {
     .navigationBar {
         flex: 0 1 60%;
         justify-content: space-evenly;
         margin-left: auto;
         padding: 0;
-    }
-
-    .navigationBar > *::before {
-        display: none;
     }
 }
 
