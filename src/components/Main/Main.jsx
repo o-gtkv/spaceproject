@@ -1,12 +1,10 @@
 import React from 'react'
 import { Route, Routes, Navigate } from 'react-router-dom'
-import CrewPage from '../../pages/CrewPage/CrewPage'
 
+import CrewPage from '../../pages/CrewPage/CrewPage'
 import DestinationPage from '../../pages/DestinationPage/DestinationPage'
 import HomePage from '../../pages/HomePage/HomePage'
 import TechnologyPage from '../../pages/TechnologyPage/TechnologyPage'
-
-export const Context = React.createContext(null)
 
 function Main() {
     return (

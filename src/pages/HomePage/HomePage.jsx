@@ -1,22 +1,15 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 
-import { setBodyBackgroundImage } from '../../utils/utils'
+import { useBodyBackground } from '../../utils/utils'
 
 import styles from './HomePage.module.css'
 import mobileBgImg from '../../assets/images/home/background-home-mobile.jpg'
 import tabletBgImg from '../../assets/images/home/background-home-tablet.jpg'
 import desktopBgImg from '../../assets/images/home/background-home-desktop.jpg'
 
-const setBg = () => setBodyBackgroundImage(desktopBgImg, tabletBgImg, mobileBgImg)
-
 function HomePage() {
-    useEffect(() => {
-        setBg()
-        window.addEventListener('resize', setBg)
-        return () => window.removeEventListener('resize', setBg)
-    })
-
+    useBodyBackground(desktopBgImg, tabletBgImg, mobileBgImg)
     return (
         <div className="container">
             <div className={styles.page}>

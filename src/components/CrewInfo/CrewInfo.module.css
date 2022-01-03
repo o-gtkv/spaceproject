@@ -73,6 +73,10 @@
     .bulletActive {
         padding: 5px 5px;
     }
+
+    .paginationBar {
+        justify-content: center;
+    }
 }    
 
 @media screen and (max-width: 560px) {

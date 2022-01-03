@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 
 import TabBar from '../../components/TabBar/TabBar'
 import Tab from '../../components/Tab/Tab'
@@ -6,7 +6,7 @@ import TabContent from '../../components/TabContent/TabContent'
 import TabContext from '../../components/TabContext/TabContext'
 import DestinationInfo from '../../components/DestinationInfo/DestinationInfo'
 
-import { setBodyBackgroundImage } from '../../utils/utils'
+import { useBodyBackground } from '../../utils/utils'
 
 import styles from './DestinationPage.module.css'
 import mobileBgImg from '../../assets/images/destination/background-destination-mobile.jpg'
@@ -16,23 +16,13 @@ import desktopBgImg from '../../assets/images/destination/background-destination
 import { destination } from '../../data/destination'
 import { useLocation } from 'react-router'
 
-const setBg = () => setBodyBackgroundImage(desktopBgImg, tabletBgImg, mobileBgImg)
+// const setBg = () => setBodyBackgroundImage(desktopBgImg, tabletBgImg, mobileBgImg)
 
 function DestinationPage() {
-    useEffect(() => {
-        setBg()
-        window.addEventListener('resize', setBg)
-        return () => window.removeEventListener('resize', setBg)
-    })
-
     const [image, setImage] = useState(destination[0].image)
-
-    const changeImageTo = (index) => {
-        setImage(destination[index].image)
-    }
-
+    const changeImageTo = (index) => setImage(destination[index].image)
     const pageNumber = useLocation().state
-
+    useBodyBackground(desktopBgImg, tabletBgImg, mobileBgImg)
     return (
         <div className="container">
             <div className={`${styles.page}`}>

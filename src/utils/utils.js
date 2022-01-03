@@ -60,9 +60,9 @@ export function setBodyBackgroundImage(desktopBgImg, tabletBgImg, mobileBgImg) {
         document.body.style.backgroundImage = `url(${desktopBgImg})`
 }
 
-export function usePageBackground(desktopBgImg, tabletBgImg, mobileBgImg) {
-    const setBg = () => setBodyBackgroundImage(desktopBgImg, tabletBgImg, mobileBgImg)
+export function useBodyBackground(desktopBgImg, tabletBgImg, mobileBgImg) {
     useEffect(() => {
+        const setBg = () => setBodyBackgroundImage(desktopBgImg, tabletBgImg, mobileBgImg)
         setBg()
         window.addEventListener('resize', setBg)
         return () => window.removeEventListener('resize', setBg)
