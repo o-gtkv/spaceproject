@@ -1,29 +1,17 @@
-import React, { useState, useEffect } from 'react'
+import { useState } from 'react'
+import { useMedia } from '../../hooks'
 import NavigationBar from '../NavigationBar/NavigationBar'
 import NavigationLink from '../NavigationLink/NavigationLink'
-
 import MobileMenuButton from '../MobileMenuButton/MobileMenuButton'
 
-import styles from './Header.module.css'
+import styles from './Header.module.scss'
 import logo from '../../assets/images/shared/logo.svg'
 import iconHamburger from '../../assets/images/shared/icon-hamburger.svg'
 
 function Header() {
-    const [isNavBarVisible, setVisibility] = useState(!window.matchMedia('(max-width: 560px)').matches)
-
-    const handleResize = () => {
-        setVisibility(!window.matchMedia('(max-width: 560px)').matches)
-    }
-
-    const toggleVisibility = () => {
-        setVisibility(!isNavBarVisible)
-    }
-
-    useEffect(() => {
-        window.addEventListener('resize', handleResize)
-        return () => window.removeEventListener('resize', handleResize)
-    })
-
+    const [isNavBarVisible, setVisibility] = useState(!window.innerWidth > 560)
+    const toggleVisibility = () => setVisibility(!isNavBarVisible)
+    useMedia('(max-width: 560px)', (matches) => setVisibility(!matches)) // to prevent menu to be open on leave an back to mobile version
     return (
         <header className={styles.header}>
             <img className={styles.logo} src={logo} alt="logo" />

@@ -1,22 +1,14 @@
-import React, { useState } from 'react'
-
-import TabBar from '../../components/TabBar/TabBar'
-import Tab from '../../components/Tab/Tab'
-import TabContent from '../../components/TabContent/TabContent'
-import TabContext from '../../components/TabContext/TabContext'
+import { useState } from 'react'
+import { useLocation } from 'react-router'
+import { TabBar, Tab, TabContent, TabContext } from '../../components/Tabs/Tabs'
 import DestinationInfo from '../../components/DestinationInfo/DestinationInfo'
+import { useBodyBackground } from '../../hooks'
 
-import { useBodyBackground } from '../../utils/utils'
-
-import styles from './DestinationPage.module.css'
+import styles from './DestinationPage.module.scss'
+import { destination } from '../../data/destination'
 import mobileBgImg from '../../assets/images/destination/background-destination-mobile.jpg'
 import tabletBgImg from '../../assets/images/destination/background-destination-tablet.jpg'
 import desktopBgImg from '../../assets/images/destination/background-destination-desktop.jpg'
-
-import { destination } from '../../data/destination'
-import { useLocation } from 'react-router'
-
-// const setBg = () => setBodyBackgroundImage(desktopBgImg, tabletBgImg, mobileBgImg)
 
 function DestinationPage() {
     const [image, setImage] = useState(destination[0].image)

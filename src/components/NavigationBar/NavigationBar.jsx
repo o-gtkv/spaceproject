@@ -1,11 +1,10 @@
-import React, { Children, cloneElement }  from 'react'
-
+import { Children, cloneElement } from 'react'
 import MobileMenuButton from '../MobileMenuButton/MobileMenuButton'
 
-import styles from './NavigationBar.module.css'
+import styles from './NavigationBar.module.scss'
 import iconClose from '../../assets/images/shared/icon-close.svg'
 
-function NavigationBar({isVisible, children, toggleVisibility}) {
+function NavigationBar({ isVisible, children, toggleVisibility }) {
     return (
         <nav className={`${styles.navigationBar} ${isVisible ? styles.visible : ''}`}>
             <div className={styles.mobileMenuButtonWrapper}>
@@ -19,8 +18,6 @@ function NavigationBar({isVisible, children, toggleVisibility}) {
                     })
                 })
             }
-
-            {/* {children} */}
         </nav>
     )
 }

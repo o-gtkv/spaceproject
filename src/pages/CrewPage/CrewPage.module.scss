@@ -1,0 +1,7 @@
+@use "../../scss/vars";
+
+@media screen and (#{vars.$mobile-breakpoint}) {
+    .page {
+        margin-bottom: 100px;
+    }
+}

@@ -1,8 +1,8 @@
 import React, { useRef, useState, useEffect } from 'react'
-import { useMedia } from '../../utils/utils'
+import { useMedia } from '../../hooks'
 import Slider from '../Slider/Slider'
 
-import styles from './CrewInfo.module.css'
+import styles from './CrewInfo.module.scss'
 import { crew } from '../../data/crew'
 
 function getElementHeight(el) {
@@ -64,7 +64,7 @@ function CrewInfo() {
             return
         imgRefs.forEach(img => img.current.addEventListener('load', handleImageLoad))
         return () => imgRefs.forEach(img => img.current.removeEventListener('load', handleImageLoad))
-    }, [imgRefs])
+    }, [imgRefs]) // eslint-disable-line react-hooks/exhaustive-deps
 
     return (
         <div className={styles.content}>

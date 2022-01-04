@@ -1,11 +1,9 @@
 import React from 'react'
 import { useLocation } from 'react-router-dom'
-
 import TechnologyInfo from '../../components/TechnologyInfo/TechnologyInfo'
+import { useBodyBackground } from '../../hooks'
 
-import { useBodyBackground } from '../../utils/utils'
-
-import styles from './TechnologyPage.module.css'
+import styles from './TechnologyPage.module.scss'
 import mobileBgImg from '../../assets/images/technology/background-technology-mobile.jpg'
 import tabletBgImg from '../../assets/images/technology/background-technology-tablet.jpg'
 import desktopBgImg from '../../assets/images/technology/background-technology-desktop.jpg'

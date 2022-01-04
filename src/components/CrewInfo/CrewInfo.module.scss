@@ -1,3 +1,5 @@
+@use "../../scss/vars";
+
 .crewName {
     margin: 20px 0 0;
 }
@@ -39,15 +41,10 @@
 }
 
 .controlledSlider {
-    /* display: flex; */
     margin-top: -80px;
-    /* min-height: calc((100vh - 101px - 40px - 34px - 30px - 70px)); */
-    /* max-height: calc((100vh - 101px - 40px - 34px - 30px - 70px)); */
-    /* min-height: 100hv; */
-    /* align-items: flex-end; */
 }
 
-@media screen and (max-width: 1300px) {
+@media screen and (#{vars.$tablet-breakpoint}) {
     .mainSlider,
     .controlledSlider {
         flex-basis: 100%;
@@ -79,9 +76,8 @@
     }
 }    
 
-@media screen and (max-width: 560px) {
+@media screen and (#{vars.$mobile-breakpoint}) {
     .content {
-        /* flex-direction: column-reverse; */
         flex-wrap: wrap-reverse;
         align-items: center;
         justify-content: center;

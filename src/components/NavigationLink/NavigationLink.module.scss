@@ -1,0 +1,50 @@
+@use "../../scss/vars";
+
+.navigationLink {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+    font-family: "Barlow condensed", sans-serif;
+    font-size: 1rem;
+    letter-spacing: 2.7px; 
+    padding: 40px 0;
+    border-bottom: 2px solid transparent;
+
+    &:hover {
+        border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+    }
+
+    &.active {
+        border-bottom: 2px solid white;
+    }
+
+}
+
+@media screen and (#{vars.$desktop-breakpoint}) {
+    .navigationLink::before {                        
+        content: '0'attr(datalinknumber);
+        padding-right: 1rem;
+        font-weight: 700;
+    }
+}
+
+@media screen and (#{vars.$tablet-breakpoint}) {
+    .navigationLink {
+        font-size: 0.875rem;
+    }
+}
+
+@media screen and (#{vars.$mobile-breakpoint}) {
+    .navigationLink {
+        padding: 0;
+        border-bottom: none;
+
+        &:hover {
+            border-bottom: none;
+        }
+
+        &.active {
+            border-bottom: none
+        }
+    }
+}

@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import Slider from '../Slider/Slider'
-import { useMedia } from '../../utils/utils'
-import { technology } from '../../data/technology'
+import { useMedia } from '../../hooks'
 
-import styles from './TechnologyInfo.module.css'
+import { technology } from '../../data/technology'
+import styles from './TechnologyInfo.module.scss'
 
 function TechnologyInfo() {
     const [trackedSlideIndex, setTrackedSlideIndex] = useState(0)
@@ -40,8 +40,8 @@ function TechnologyInfo() {
             >
                 {
                     technology.map((item, index) =>
-                        <div className={styles.controlledSliderSlide} key={index}>
-                            <div className={styles.imageWrapper}>
+                        <div className={styles.controlledSliderSlide ?? ''} key={index}>
+                            <div className={styles.imageWrapper ?? ''}>
                                 <img
                                     className={styles.image ?? ''}
                                     src={mql.matches ? item.imageLandscape : item.imagePortrait}

@@ -18,16 +18,12 @@
 
 .bullet {
     opacity: 0.17;
-}
 
-.bullet:hover {
-    opacity: 0.5;
-    cursor: pointer;
+    &:hover {
+       opacity: 0.5;
+       cursor: pointer;
+    }
 }
-
-/* .bullet + .bullet {
-    margin-left: 25px;
-} */
 
 .bulletActive {
     opacity: 1;
@@ -35,7 +31,6 @@
 
 .paginationBar {
     display: flex;
-    /* justify-content: center; */
     column-gap: 25px;
     margin-top: 15px;
     margin-bottom: 15px;

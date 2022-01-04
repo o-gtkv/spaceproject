@@ -1,0 +1,21 @@
+@use "../../scss/vars";
+
+.mobileMenuButton {
+    display: none;
+    margin-right: 40px;
+    cursor: pointer; 
+
+    & > img {
+        vertical-align: middle;
+    }
+}
+
+@media screen and (#{vars.$mobile-breakpoint}) {
+    .mobileMenuButton {
+        display: block;
+
+        &.hidden {
+            display: none;
+        }
+    }
+}

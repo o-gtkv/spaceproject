@@ -2,7 +2,7 @@ import React, { Children, cloneElement, useState } from 'react'
 import TabContent from '../TabContent/TabContent'
 import TabBar from '../TabBar/TabBar'
 
-import styles from './TabContext.module.css'
+import styles from './TabContext.module.scss'
 
 function TabContext({ children, tabClickExternalAction = Function.prototype }) {
     const [value, setValue] = useState(0)
@@ -13,7 +13,7 @@ function TabContext({ children, tabClickExternalAction = Function.prototype }) {
     }
 
     return (
-        <div className={styles.tabContext}>
+        <div className={styles.tabContext ?? ''}>
             {
                 Children.map(children, (child) => {
                     if (child.type === TabBar) {

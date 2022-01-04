@@ -1,3 +1,5 @@
+@use "../../scss/vars";
+
 .page {
     --animationOffsetTop: 10px;
     --exploreButtonSize: 274px;
@@ -42,11 +44,11 @@
     box-sizing: content-box;
     text-decoration: none;
     animation: bouncing 1.5s infinite;
-}
 
-.exploreButton:hover {
-    border-color: rgba(255, 255, 255, 0.1);
-    transition: border-color 0.1s ease-in-out;
+    &:hover {
+        border-color: rgba(255, 255, 255, 0.1);
+        transition: border-color 0.1s ease-in-out;
+    }
 }
 
 @keyframes bouncing {
@@ -61,7 +63,7 @@
     } 
 }
 
-@media screen and (max-width: 1350px) {
+@media screen and (#{vars.$home-page-tablet-breakpoint}) {
     .page {
         --exploreButtonSize: 242px;
         margin-top: 70px;
@@ -90,8 +92,7 @@
     }
 }
 
-
-@media screen and (max-width: 560px) {
+@media screen and (#{vars.$mobile-breakpoint}) {
     .page {
         --exploreButtonSize: 150px;
         margin-top: 50px;

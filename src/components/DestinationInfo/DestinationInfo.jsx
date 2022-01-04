@@ -1,8 +1,8 @@
 import React from 'react'
 
-import styles from './DestinationInfo.module.css'
+import styles from './DestinationInfo.module.scss'
 
-function DestinationInfo({name, text, avgDistance, estTravelTime}) {
+function DestinationInfo({ name, text, avgDistance, estTravelTime }) {
     return (
         <div className={styles.destinationInfo}>
             <div className={`${styles.content}`} >
