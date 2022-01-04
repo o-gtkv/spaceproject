@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react'
 import { useMedia } from '../../hooks'
 import Slider from '../Slider/Slider'
+import { mobileBreakpoint, mobileBreakpointVal } from '../../utils/utils'
 
 import styles from './CrewInfo.module.scss'
 import { crew } from '../../data/crew'
@@ -36,8 +37,8 @@ function CrewInfo() {
         setSlideHeightMax(maxHeight)
     }
 
-    const mobileMql = useMedia('(max-width: 560px)')
-    useMedia('(min-width: 561px)', (matches) => {
+    const mobileMql = useMedia(mobileBreakpoint)
+    useMedia(`(min-width: ${mobileBreakpointVal + 1}px)`, (matches) => {
         if (!matches || slideHeightMax)
             return
         justifySlidesHeight()

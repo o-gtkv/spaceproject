@@ -1,12 +1,10 @@
 import { useState, useEffect } from 'react'
-
-const tablet = '(max-width: 1300px)'
-const mobile = '(max-width: 560px)'
+import { tabletBreakpointVal, mobileBreakpointVal } from './utils/utils'
 
 function setBodyBackgroundImage(desktopBgImg, tabletBgImg, mobileBgImg) {
-    if (window.matchMedia(mobile).matches)
+    if (window.innerWidth <= mobileBreakpointVal)
         document.body.style.backgroundImage = `url(${mobileBgImg})`
-    else if (window.matchMedia(tablet).matches)
+    else if (window.innerWidth <= tabletBreakpointVal)
         document.body.style.backgroundImage = `url(${tabletBgImg})`
     else
         document.body.style.backgroundImage = `url(${desktopBgImg})`

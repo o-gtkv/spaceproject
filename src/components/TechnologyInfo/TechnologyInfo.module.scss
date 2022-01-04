@@ -82,7 +82,7 @@
     color: black;
 }
 
-@media screen and (max-width: 1300px) {
+@media screen and (#{vars.$tablet-breakpoint}) {
     .bullet,
     .bulletActive {
         padding: 30px 30px;

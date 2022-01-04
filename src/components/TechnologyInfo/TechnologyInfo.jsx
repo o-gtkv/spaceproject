@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
 import Slider from '../Slider/Slider'
 import { useMedia } from '../../hooks'
+import { tabletBreakpoint } from '../../utils/utils'
 
 import { technology } from '../../data/technology'
 import styles from './TechnologyInfo.module.scss'
 
 function TechnologyInfo() {
     const [trackedSlideIndex, setTrackedSlideIndex] = useState(0)
-    const mql = useMedia('(max-width: 1300px)')
+    const mql = useMedia(tabletBreakpoint)
 
     return (
         <div className={styles.content}>

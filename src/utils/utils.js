@@ -1,3 +1,7 @@
+export const tabletBreakpointVal = 1300, mobileBreakpointVal = 560
+export const tabletBreakpoint = `(max-width: ${tabletBreakpointVal}px)`
+export const mobileBreakpoint = `(max-width: ${mobileBreakpointVal}px)`
+
 export function isEqual(a, b) {
     const typeA = typeof a
     const typeB = typeof b
