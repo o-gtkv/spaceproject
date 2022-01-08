@@ -1,0 +1,19 @@
+.mobileMenuButton {
+    display: none;
+    margin-right: 40px;
+    cursor: pointer; 
+}
+
+.mobileMenuButton > img {
+    vertical-align: middle;    
+}
+
+@media screen and (max-width: 560px) {
+    .mobileMenuButton {
+        display: block;
+    }
+
+    .mobileMenuButton.hidden {
+        display: none;
+    }
+}

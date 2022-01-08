@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
-import styles from './NavigationLink.module.scss'
+import styles from './NavigationLink.module.css'
 
 function NavigationLink({ to, text, number, onClick = Function.prototype }) {
     const location = useLocation()

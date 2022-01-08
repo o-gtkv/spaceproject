@@ -4,7 +4,7 @@ import CrewInfo from '../../components/CrewInfo/CrewInfo'
 import { useBodyBackground } from '../../hooks'
 import PageTitle from '../shared/PageTitle/PageTitle'
 
-import styles from './CrewPage.module.scss'
+import styles from './CrewPage.module.css'
 import mobileBgImg from '../../assets/images/crew/background-crew-mobile.jpg'
 import tabletBgImg from '../../assets/images/crew/background-crew-tablet.jpg'
 import desktopBgImg from '../../assets/images/crew/background-crew-desktop.jpg'

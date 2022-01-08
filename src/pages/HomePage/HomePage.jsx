@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useBodyBackground } from '../../hooks'
 
-import styles from './HomePage.module.scss'
+import styles from './HomePage.module.css'
 import mobileBgImg from '../../assets/images/home/background-home-mobile.jpg'
 import tabletBgImg from '../../assets/images/home/background-home-tablet.jpg'
 import desktopBgImg from '../../assets/images/home/background-home-desktop.jpg'

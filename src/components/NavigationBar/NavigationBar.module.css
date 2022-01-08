@@ -1,5 +1,3 @@
-@use "../../scss/vars";
-
 .navigationBar {
     flex-grow: 1;
     display: flex;
@@ -16,7 +14,7 @@
 }
 
 
-@media screen and (#{vars.$tablet-breakpoint}) {
+@media screen and (max-width: 1300px) {
     .navigationBar {
         flex: 0 1 60%;
         justify-content: space-evenly;
@@ -29,7 +27,7 @@
     display: none;
 }
 
-@media screen and (#{vars.$mobile-breakpoint}) {
+@media screen and (max-width: 560px) {
     .mobileMenuButtonWrapper {
         flex-basis: var(--headerMobileMaxHeight);
         display: flex;
@@ -56,21 +54,21 @@
         width: 66%;
         transform: translateX(100%);
         background-image: linear-gradient(black, silver);
+    }
 
-        &.visible {
-            display: flex;
-            transform: translateX(0);
-            animation: show 0.3s;
-        }
+    .navigationBar.visible {
+        display: flex;
+        transform: translateX(0);
+        animation: show 0.3s;
+    }
 
-        & > *:nth-child(1) {
-            margin-top: var(--headerMarginTop);
-            margin-bottom: 40px;
-        }
+    .navigationBar > *:nth-child(1) {
+        margin-top: var(--headerMarginTop);
+        margin-bottom: 40px;
+    }
 
-        & > *::before {
-            display: initial;
-        }
+    .navigationBar > *::before {
+        display: initial;
     }
 
     @keyframes show {

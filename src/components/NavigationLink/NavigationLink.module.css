@@ -1,5 +1,3 @@
-@use "../../scss/vars";
-
 .navigationLink {
     text-transform: uppercase;
     text-decoration: none;
@@ -9,18 +7,17 @@
     letter-spacing: 2.7px; 
     padding: 40px 0;
     border-bottom: 2px solid transparent;
-
-    &:hover {
-        border-bottom: 2px solid rgba(255, 255, 255, 0.5);
-    }
-
-    &.active {
-        border-bottom: 2px solid white;
-    }
-
 }
 
-@media screen and (#{vars.$desktop-breakpoint}) {
+.navigationLink:hover {
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.navigationLink.active {
+    border-bottom: 2px solid white;
+}
+
+@media screen and (min-width: 1301px) {
     .navigationLink::before {                        
         content: '0'attr(datalinknumber);
         padding-right: 1rem;
@@ -28,23 +25,23 @@
     }
 }
 
-@media screen and (#{vars.$tablet-breakpoint}) {
+@media screen and (max-width: 1300px) {
     .navigationLink {
         font-size: 0.875rem;
     }
 }
 
-@media screen and (#{vars.$mobile-breakpoint}) {
+@media screen and (max-width: 560px) {
     .navigationLink {
         padding: 0;
         border-bottom: none;
+    }
 
-        &:hover {
-            border-bottom: none;
-        }
+    .navigationLink:hover {
+        border-bottom: none;
+    }
 
-        &.active {
-            border-bottom: none
-        }
+    .navigationLink.active {
+        border-bottom: none
     }
 }

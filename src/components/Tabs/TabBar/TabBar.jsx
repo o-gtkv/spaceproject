@@ -1,6 +1,6 @@
 import React, { Children, cloneElement } from 'react'
 
-import styles from './TabBar.module.scss'
+import styles from './TabBar.module.css'
 
 function TabBar({ children, value, switchToTabWithValue, ...props }) {
     return (

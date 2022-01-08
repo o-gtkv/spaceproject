@@ -1,0 +1,38 @@
+.page {
+    margin-bottom: 50px;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.imageBlock,
+.tabBlock {
+    margin-top: 50px;
+    flex-basis: 50%;
+}
+
+@media screen and (max-width: 1300px) {
+    .imageBlock {
+        flex-basis: 100%;
+        text-align: center;
+    }
+    
+    .image {
+        width: 300px;
+    }
+}
+
+
+@media screen and (max-width: 560px) {
+    .image {
+        width: 170px;
+    }
+
+    .tab {
+        font-size: 0.875rem;
+        letter-spacing: 2.36px;
+    }
+}

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import styles from './Tab.module.scss'
+import styles from './Tab.module.css'
 
 function Tab({ label, value, signal, active, ...props }) {
     const handleClick = () => signal(value)

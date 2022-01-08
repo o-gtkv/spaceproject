@@ -1,7 +1,7 @@
 import React from 'react'
 import { Fade } from 'react-reveal'
 
-import styles from './TabContent.module.scss'
+import styles from './TabContent.module.css'
 
 function TabContent({ children, visible }) {
     return (

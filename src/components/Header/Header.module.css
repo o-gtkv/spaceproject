@@ -1,5 +1,3 @@
-@use "../../scss/vars";
-
 .header {
     display: flex;
     align-items: center;
@@ -19,7 +17,7 @@
     max-width: var(--logoMaxWidth);
 }
 
-@media screen and (#{vars.$tablet-breakpoint}) {     
+@media screen and (max-width: 1300px) {     
     .header {
         margin-top: 0;
     }
@@ -29,7 +27,7 @@
     }
 }
 
-@media screen and (#{vars.$mobile-breakpoint}) {
+@media screen and (max-width: 560px) {
     .header {
         margin-top: var(--headerMarginTop);
         max-height: var(--headerMobileMaxHeight);

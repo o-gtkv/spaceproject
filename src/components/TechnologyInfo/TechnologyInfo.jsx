@@ -4,7 +4,7 @@ import { useMedia } from '../../hooks'
 import { tabletBreakpoint } from '../../utils/utils'
 
 import { technology } from '../../data/technology'
-import styles from './TechnologyInfo.module.scss'
+import styles from './TechnologyInfo.module.css'
 
 function TechnologyInfo() {
     const [trackedSlideIndex, setTrackedSlideIndex] = useState(0)

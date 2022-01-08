@@ -1,6 +1,6 @@
 import React from 'react'
 
-import styles from './DestinationInfo.module.scss'
+import styles from './DestinationInfo.module.css'
 
 function DestinationInfo({ name, text, avgDistance, estTravelTime }) {
     return (

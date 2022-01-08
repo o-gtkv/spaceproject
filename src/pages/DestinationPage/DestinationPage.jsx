@@ -6,7 +6,7 @@ import { useBodyBackground } from '../../hooks'
 import { Zoom, Fade } from 'react-reveal'
 import PageTitle from '../shared/PageTitle/PageTitle'
 
-import styles from './DestinationPage.module.scss'
+import styles from './DestinationPage.module.css'
 import { destination } from '../../data/destination'
 import mobileBgImg from '../../assets/images/destination/background-destination-mobile.jpg'
 import tabletBgImg from '../../assets/images/destination/background-destination-tablet.jpg'
@@ -25,7 +25,7 @@ function DestinationPage() {
                     <div className={styles.imageBlock}>
                         <Zoom right delay={-400} duration={1700} spy={image}>
                             <Fade duration={3000}>
-                                <img src={image} alt="destination" />
+                                <img className={styles.image ?? ''} src={image} alt="destination" />
                             </Fade>
                         </Zoom>
                     </div>

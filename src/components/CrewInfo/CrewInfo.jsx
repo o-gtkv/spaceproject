@@ -3,7 +3,7 @@ import { useMedia } from '../../hooks'
 import Slider from '../Slider/Slider'
 import { mobileBreakpoint, mobileBreakpointVal } from '../../utils/utils'
 
-import styles from './CrewInfo.module.scss'
+import styles from './CrewInfo.module.css'
 import { crew } from '../../data/crew'
 
 function getElementHeight(el) {

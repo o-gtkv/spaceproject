@@ -1,6 +1,6 @@
 import React from 'react'
 
-import styles from './MobileMenuButton.module.scss'
+import styles from './MobileMenuButton.module.css'
 
 function MobileMenuButton({ icon, action, isHidden, ...props }) {
     return (

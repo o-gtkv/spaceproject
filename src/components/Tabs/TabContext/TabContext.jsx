@@ -2,7 +2,7 @@ import React, { Children, cloneElement, useState } from 'react'
 import TabContent from '../TabContent/TabContent'
 import TabBar from '../TabBar/TabBar'
 
-import styles from './TabContext.module.scss'
+import styles from './TabContext.module.css'
 
 function TabContext({ children, tabClickExternalAction = Function.prototype }) {
     const [value, setValue] = useState(0)

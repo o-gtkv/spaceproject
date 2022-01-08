@@ -1,7 +1,7 @@
 import { Children, cloneElement } from 'react'
 import MobileMenuButton from '../MobileMenuButton/MobileMenuButton'
 
-import styles from './NavigationBar.module.scss'
+import styles from './NavigationBar.module.css'
 import iconClose from '../../assets/images/shared/icon-close.svg'
 
 function NavigationBar({ isVisible, children, toggleVisibility }) {

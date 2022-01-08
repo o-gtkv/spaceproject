@@ -5,7 +5,7 @@ import NavigationLink from '../NavigationLink/NavigationLink'
 import MobileMenuButton from '../MobileMenuButton/MobileMenuButton'
 import { mobileBreakpoint, mobileBreakpointVal } from '../../utils/utils'
 
-import styles from './Header.module.scss'
+import styles from './Header.module.css'
 import logo from '../../assets/images/shared/logo.svg'
 import iconHamburger from '../../assets/images/shared/icon-hamburger.svg'
 

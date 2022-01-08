@@ -43,12 +43,11 @@
     cursor: pointer;
     box-sizing: content-box;
     text-decoration: none;
-    animation: bouncing 1.5s infinite;
+}
 
-    &:hover {
-        border-color: rgba(255, 255, 255, 0.1);
-        transition: border-color 0.1s ease-in-out;
-    }
+.exploreButton:hover {
+    border-color: rgba(255, 255, 255, 0.1);
+    transition: border-color 0.1s ease-in-out;
 }
 
 @keyframes bouncing {
@@ -63,7 +62,7 @@
     } 
 }
 
-@media screen and (#{vars.$home-page-tablet-breakpoint}) {
+@media screen and (max-width: 1300px) {
     .page {
         --exploreButtonSize: 242px;
         margin-top: 70px;
@@ -92,7 +91,7 @@
     }
 }
 
-@media screen and (#{vars.$mobile-breakpoint}) {
+@media screen and (max-width: 560px) {
     .page {
         --exploreButtonSize: 150px;
         margin-top: 50px;

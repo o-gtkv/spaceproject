@@ -18,11 +18,11 @@
 
 .bullet {
     opacity: 0.17;
+}
 
-    &:hover {
-       opacity: 0.5;
-       cursor: pointer;
-    }
+.bullet:hover {
+   opacity: 0.5;
+   cursor: pointer;
 }
 
 .bulletActive {

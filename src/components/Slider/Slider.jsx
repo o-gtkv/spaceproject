@@ -1,7 +1,7 @@
 import React, { useEffect, useState, Children, cloneElement } from 'react'
 import { isEqual } from '../../utils/utils'
 
-import styles from './Slider.module.scss'
+import styles from './Slider.module.css'
 
 class Autoplay {
     static defaultDelay = 1000
