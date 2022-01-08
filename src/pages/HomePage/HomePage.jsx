@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+
 import { useBodyBackground } from '../../hooks'
 
 import styles from './HomePage.module.css'
@@ -29,7 +30,13 @@ function HomePage() {
                     </div>
                     <Zoom duration={duration} >
                         <div className={styles.exploreButtonBlock}>
-                            <Link to="/destination" className={`${styles.exploreButton} upcase`}>explore</Link>
+                            <Link
+                                to="/destination"
+                                className={`${styles.exploreButton} upcase`}
+                                state={2}
+                            >
+                                explore
+                            </Link>
                         </div>
                     </Zoom>
                 </div>
