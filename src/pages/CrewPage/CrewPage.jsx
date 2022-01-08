@@ -2,6 +2,7 @@ import React from 'react'
 import { useLocation } from 'react-router-dom'
 import CrewInfo from '../../components/CrewInfo/CrewInfo'
 import { useBodyBackground } from '../../hooks'
+import PageTitle from '../shared/PageTitle/PageTitle'
 
 import styles from './CrewPage.module.scss'
 import mobileBgImg from '../../assets/images/crew/background-crew-mobile.jpg'
@@ -14,7 +15,7 @@ function CrewPage() {
     return (
         <div className="container">
             <div className={styles.page ?? ''}>
-                <h5 className="page-title heading-5 upcase" datapagenumber={pageNumber}>meet your crew</h5>
+                <PageTitle text="meet your crew" pageNumber={pageNumber} />
                 <CrewInfo />
             </div>
         </div>

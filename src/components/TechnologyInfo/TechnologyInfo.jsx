@@ -19,7 +19,7 @@ function TechnologyInfo() {
                     bulletClass: styles.bullet,
                     bulletActiveClass: styles.bulletActive,
                 }}
-                autoplay={{ delay: 3000 }}
+                autoplay={{ delay: 5000 }}
                 onSlideChange={setTrackedSlideIndex}
             >
                 {

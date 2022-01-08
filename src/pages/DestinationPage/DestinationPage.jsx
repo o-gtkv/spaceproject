@@ -3,6 +3,8 @@ import { useLocation } from 'react-router'
 import { TabBar, Tab, TabContent, TabContext } from '../../components/Tabs/Tabs'
 import DestinationInfo from '../../components/DestinationInfo/DestinationInfo'
 import { useBodyBackground } from '../../hooks'
+import { Zoom, Fade } from 'react-reveal'
+import PageTitle from '../shared/PageTitle/PageTitle'
 
 import styles from './DestinationPage.module.scss'
 import { destination } from '../../data/destination'
@@ -12,16 +14,20 @@ import desktopBgImg from '../../assets/images/destination/background-destination
 
 function DestinationPage() {
     const [image, setImage] = useState(destination[0].image)
-    const changeImageTo = (index) => setImage(destination[index].image)
     const pageNumber = useLocation().state
     useBodyBackground(desktopBgImg, tabletBgImg, mobileBgImg)
+    const changeImageTo = (index) => setImage(destination[index].image)
     return (
         <div className="container">
-            <div className={`${styles.page}`}>
-                <h5 className="page-title heading-5 upcase" datapagenumber={pageNumber}>pick your distanation</h5>
-                <div className={`${styles.content}`}>
-                    <div className={`${styles.imageBlock}`}>
-                        <img src={image} alt="destanation" />
+            <div className={styles.page}>
+                <PageTitle text="pick your distanation" pageNumber={pageNumber} />
+                <div className={styles.content}>
+                    <div className={styles.imageBlock}>
+                        <Zoom right delay={-400} duration={1700} spy={image}>
+                            <Fade duration={3000}>
+                                <img src={image} alt="destination" />
+                            </Fade>
+                        </Zoom>
                     </div>
                     <div className={styles.tabBlock}>
                         <TabContext tabClickExternalAction={changeImageTo}>
