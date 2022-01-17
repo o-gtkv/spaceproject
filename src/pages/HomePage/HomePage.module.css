@@ -1,5 +1,3 @@
-@use "../../scss/vars";
-
 .page {
     --animationOffsetTop: 10px;
     --exploreButtonSize: 274px;

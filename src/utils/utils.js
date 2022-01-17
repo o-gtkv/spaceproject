@@ -32,3 +32,11 @@ export function isEqual(a, b) {
     }
     return true
 }
+
+export function getElementHeight(el) {
+    const displayVal = el.style.display
+    el.style.display = 'flex'
+    const h = el.offsetHeight
+    el.style.display = displayVal
+    return h
+}

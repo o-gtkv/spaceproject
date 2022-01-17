@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import { useLocation } from 'react-router'
-import { TabBar, Tab, TabContent, TabContext } from '../../components/Tabs/Tabs'
-import DestinationInfo from '../../components/DestinationInfo/DestinationInfo'
 import { useBodyBackground } from '../../hooks'
 import { Zoom, Fade } from 'react-reveal'
+import { TabBar, Tab, TabContent, TabContext } from '../../components/Tabs/Tabs'
 import PageTitle from '../shared/PageTitle/PageTitle'
+import DestinationInfo from '../../components/DestinationInfo/DestinationInfo'
 
 import styles from './DestinationPage.module.css'
 import { destination } from '../../data/destination'
@@ -25,7 +25,10 @@ function DestinationPage() {
                     <div className={styles.imageBlock}>
                         <Zoom right delay={-400} duration={1700} spy={image}>
                             <Fade duration={3000}>
-                                <img className={styles.image ?? ''} src={image} alt="destination" />
+                                <picture>
+                                    <source srcSet={image.webp} type="image/webp" />
+                                    <img className={styles.image ?? ''} src={image.png} alt="Destination" />
+                                </picture>
                             </Fade>
                         </Zoom>
                     </div>
