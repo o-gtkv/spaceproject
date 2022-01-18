@@ -32,7 +32,6 @@ function CrewInfo() {
     useMedia(`(min-width: ${mobileBreakpointVal + 1}px)`, (matches) => {
         if (!matches || slideHeightMax)
             return
-        console.log('media')
         justifySlidesHeight()
     })
 
@@ -44,7 +43,6 @@ function CrewInfo() {
     const handleImageLoad = ((e) => {
         let count = 0
         return (e) => {
-            console.log('load')
             ++count
             if (count === crew.length)
                 setSlideHeightMax(determineMaxHeightImage(e.target))
