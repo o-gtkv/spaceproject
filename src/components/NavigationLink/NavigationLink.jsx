@@ -12,7 +12,7 @@ function NavigationLink({ to, text, number, onClick = Function.prototype, ...pro
             to={to}
             onClick={onClick}
             state={number}
-            datalinknumber={number}
+            data-linknumber={number}
         >
             {text}
         </Link>

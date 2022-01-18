@@ -16,7 +16,7 @@
     height: 100%;
 }
 
-.imageWrapper {
+.picture {
     display: flex;
     align-items: flex-end;
 }
@@ -86,7 +86,7 @@
         border-bottom: 1px solid #383B4B;
     }
 
-    .imageWrapper {
+    .picture {
         justify-content: center;
         height: inherit;
     }
@@ -107,9 +107,8 @@
     }
 }
 
-
 @media screen and (min-height: 901px) {
-    .imageWrapper {
+    .picture {
         border-bottom: 1px solid #383B4B;
     }
 }

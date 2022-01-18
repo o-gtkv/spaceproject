@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react'
+import React, { useRef, useState } from 'react'
 import { useMedia } from '../../hooks'
 import Slider from '../Slider/Slider'
 import { getElementHeight, mobileBreakpoint, mobileBreakpointVal } from '../../utils/utils'
@@ -18,7 +18,6 @@ function Info({ position, name, about }) {
 
 function CrewInfo() {
     const slideRefs = [useRef(null), useRef(null), useRef(null), useRef(null)]
-    const imgRefs = [useRef(null), useRef(null), useRef(null), useRef(null)]
     const [trackedSlideIndex, setTrackedSlideIndex] = useState(0)
     const [slideHeightMax, setSlideHeightMax] = useState(0)
 
@@ -33,6 +32,7 @@ function CrewInfo() {
     useMedia(`(min-width: ${mobileBreakpointVal + 1}px)`, (matches) => {
         if (!matches || slideHeightMax)
             return
+        console.log('media')
         justifySlidesHeight()
     })
 
@@ -41,9 +41,10 @@ function CrewInfo() {
         return (el) => maxHeight = Math.max(maxHeight, getElementHeight(el))
     })()
 
-    const handleImageLoad = (() => {
+    const handleImageLoad = ((e) => {
         let count = 0
         return (e) => {
+            console.log('load')
             ++count
             if (count === crew.length)
                 setSlideHeightMax(determineMaxHeightImage(e.target))
@@ -51,13 +52,6 @@ function CrewInfo() {
                 determineMaxHeightImage(e.target)
         }
     })()
-
-    useEffect(() => {
-        if (mobileMql.matches || slideHeightMax)
-            return
-        imgRefs.forEach(img => img.current.addEventListener('load', handleImageLoad))
-        return () => imgRefs.forEach(img => img.current.removeEventListener('load', handleImageLoad))
-    }, [imgRefs]) // eslint-disable-line react-hooks/exhaustive-deps
 
     return (
         <div className={styles.content}>
@@ -97,21 +91,20 @@ function CrewInfo() {
                 {
                     crew.map((item, index) =>
                         <div ref={slideRefs[index]} className={styles.controlledSliderSlide} key={index}>
-                            <div className={styles.imageWrapper}>
-                                <picture>
-                                    <source
-                                        ref={imgRefs[index]}
-                                        srcSet={item.image.webp}
-                                        type="image/webp"
-                                    />
-                                    <img
-                                        ref={imgRefs[index]}
-                                        className={styles.image ?? ''}
-                                        src={item.image.png}
-                                        alt="crew"
-                                    />
-                                </picture>
-                            </div>
+                            <picture
+                                className={styles.picture}
+                                onLoad={e => handleImageLoad(e)}
+                            >
+                                <source
+                                    srcSet={item.image.webp}
+                                    type="image/webp"
+                                />
+                                <img
+                                    className={styles.image}
+                                    srcSet={item.image.png}
+                                    alt="crew"
+                                />
+                            </picture>
                         </div>
                     )
                 }

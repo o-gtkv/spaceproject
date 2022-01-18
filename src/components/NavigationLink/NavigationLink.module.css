@@ -19,7 +19,7 @@
 
 @media screen and (min-width: 1301px) {
     .navigationLink::before {                        
-        content: '0'attr(datalinknumber);
+        content: '0'attr(data-linknumber);
         padding-right: 1rem;
         font-weight: 700;
     }
