@@ -74,7 +74,11 @@ function CrewInfo() {
                 {
                     crew.map((item, index) =>
                         <div key={index}>
-                            <Info position={item.position} name={item.name} about={item.about} image={item.image} />
+                            <Info
+                                position={item.position}
+                                name={item.name}
+                                about={item.about}
+                            />
                         </div>
                     )
                 }
@@ -94,12 +98,19 @@ function CrewInfo() {
                     crew.map((item, index) =>
                         <div ref={slideRefs[index]} className={styles.controlledSliderSlide} key={index}>
                             <div className={styles.imageWrapper}>
-                                <img
-                                    ref={imgRefs[index]}
-                                    className={styles.image ?? ''}
-                                    src={item.image}
-                                    alt="crew"
-                                />
+                                <picture>
+                                    <source
+                                        ref={imgRefs[index]}
+                                        srcSet={item.image.webp}
+                                        type="image/webp"
+                                    />
+                                    <img
+                                        ref={imgRefs[index]}
+                                        className={styles.image ?? ''}
+                                        src={item.image.png}
+                                        alt="crew"
+                                    />
+                                </picture>
                             </div>
                         </div>
                     )
