@@ -12,11 +12,11 @@ import iconHamburger from '../../assets/images/shared/icon-hamburger.svg'
 function Header() {
     const [isNavBarVisible, setVisibility] = useState(!window.innerWidth > mobileBreakpointVal)
     const toggleVisibility = () => setVisibility(!isNavBarVisible)
-    useMedia(mobileBreakpoint, (matches) => setVisibility(!matches)) // to prevent menu to be open on leave an back to mobile version
+    useMedia(mobileBreakpoint, (matches) => setVisibility(!matches)) // to prevent menu to be open on leave and back to mobile version
     return (
         <header className={styles.header}>
             <img className={styles.logo} src={logo} alt="logo" />
-            <hr className={`${styles.hr}`} />
+            <hr className={styles.hr} />
             <NavigationBar isVisible={isNavBarVisible} toggleVisibility={toggleVisibility}>
                 <NavigationLink to="/" text="home" number={1} />
                 <NavigationLink to="/destination" text="destination" number={2} />

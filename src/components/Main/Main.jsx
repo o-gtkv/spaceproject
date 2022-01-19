@@ -8,23 +8,25 @@ import TechnologyPage from '../../pages/TechnologyPage/TechnologyPage'
 
 function Main() {
     return (
-        <Routes>
-            <Route path="/" element={
-                <HomePage />
-            } />
-            <Route path="/destination" element={
-                <DestinationPage />
-            } />
-            <Route path="/technology" element={
-                <TechnologyPage />
-            } />
-            <Route path="/crew" element={
-                <CrewPage />
-            } />
-            <Route path="/*" element={
-                <Navigate to="/" />
-            } />
-        </Routes>
+        <main>
+            <Routes>
+                <Route path="/" element={
+                    <HomePage />
+                } />
+                <Route path="/destination" element={
+                    <DestinationPage />
+                } />
+                <Route path="/technology" element={
+                    <TechnologyPage />
+                } />
+                <Route path="/crew" element={
+                    <CrewPage />
+                } />
+                <Route path="/*" element={
+                    <Navigate to="/" />
+                } />
+            </Routes>
+        </main>
     )
 }
 
